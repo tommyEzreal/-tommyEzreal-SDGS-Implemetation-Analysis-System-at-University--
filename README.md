@@ -64,6 +64,11 @@ pip install git+https://github.com/haven-jeon/PyKoSpacing.git
 ### URL
 https://hajin0324.github.io/SustainED/
 
+<img width="1373" alt="image" src="https://user-images.githubusercontent.com/100064247/209541853-649cdbab-a10a-4e2c-8f83-d6075abc4e2f.png">
+<img width="1403" alt="image" src="https://user-images.githubusercontent.com/100064247/209541916-d213d381-b42a-421b-8db9-66b85b2f3681.png">
+<img width="1399" alt="image" src="https://user-images.githubusercontent.com/100064247/209541954-46efea0b-6e04-4f47-8515-bbc5409dc34d.png">
+
+
 ### Dashboard Description
 - 영국 글로벌 대학 평가기관인 THE(Times Higher Education)가 발표한 2022년도 세계 대학 영향력 평가점수 및 3개년 점수 추이 그래프
 - 자동분류모델을 통해 도출한 5P 항목별 뉴스 기사의 비율을 나타내는 파이 그래프
