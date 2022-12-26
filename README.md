@@ -32,6 +32,7 @@ BERT를 이용하여 개별 목표에 해당하는 사례에 대한 분류를 �
  평화(Peace) |16<br>
  협력(Partnership) | 17<br>
 
+<img width="904" alt="image" src="https://user-images.githubusercontent.com/100064247/209542632-7fab28a6-6a33-49b2-a987-1772288db26b.png">
 
 
 ## Data
