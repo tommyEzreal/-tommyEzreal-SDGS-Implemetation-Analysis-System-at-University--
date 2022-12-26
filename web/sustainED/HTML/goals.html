@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainED </title>
+    <script src="JS/jquery.js"></script>
+    <link rel="stylesheet" href="CSS/SustainED.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="des">
+        <a href="index.html"><h1 class="name">SUSTAINED</h1></a>
+        <div class="menu-wrap">
+          <p class="menu"><a href="about.html">ABOUT SDGS</a></p>
+          <p class="menu"><a href="goals.html">OUR 17 GOALS</a></p>
+          <p class="menu"><a href="fivep.html">WHAT IS 5P</a></p>
+        </div>
+      </nav>
+    </header>
+
+    <h2 class="university">OUR 17 GOALS</h2>
+
+    <article class="seventeenImg">
+          <button class="btnImg" value="SDG1">
+            <img src="Images/SDGs_img/SDGs1.png">
+          </button>
+          <button class="btnImg" value="SDG2">
+            <img src="Images/SDGs_img/SDGs2.png">
+          </button>
+          <button class="btnImg" value="SDG3">
+            <img src="Images/SDGs_img/SDGs3.png">
+          </button>
+          <button class="btnImg" value="SDG4">
+            <img src="Images/SDGs_img/SDGs4.png">
+          </button>
+          <button class="btnImg" value="SDG5">
+            <img src="Images/SDGs_img/SDGs5.png">
+          </button>
+          <button class="btnImg" value="SDG6">
+            <img src="Images/SDGs_img/SDGs6.png">
+          </button>
+          <button class="btnImg" value="SDG7">
+            <img src="Images/SDGs_img/SDGs7.png">
+          </button>
+          <button class="btnImg" value="SDG8">
+            <img src="Images/SDGs_img/SDGs8.png">
+          </button>
+          <button class="btnImg" value="SDG9">
+            <img src="Images/SDGs_img/SDGs9.png">
+          </button>
+          <button class="btnImg" value="SDG10">
+            <img src="Images/SDGs_img/SDGs10.png">
+          </button>
+          <button class="btnImg" value="SDG11">
+            <img src="Images/SDGs_img/SDGs11.png">
+          </button>
+          <button class="btnImg" value="SDG12">
+            <img src="Images/SDGs_img/SDGs12.png">
+          </button>
+          <button class="btnImg" value="SDG13">
+            <img src="Images/SDGs_img/SDGs13.png">
+          </button>
+          <button class="btnImg" value="SDG14">
+            <img src="Images/SDGs_img/SDGs14.png">
+          </button>
+          <button class="btnImg" value="SDG15">
+            <img src="Images/SDGs_img/SDGs15.png">
+          </button>
+          <button class="btnImg" value="SDG16">
+            <img src="Images/SDGs_img/SDGs16.png">
+          </button>
+          <button class="btnImg" value="SDG17">
+            <img src="Images/SDGs_img/SDGs17.png">
+          </button>
+    </article>
+
+    <div id="exWrap">
+      <img id="exImg">
+      <div id="goalText">
+        <p id="exHead"></p>
+        <p id="exSub"></p>
+      </div>
+    </div>
+
+    <script>
+      $(".btnImg").click(function(){
+        var value = $(this).attr("value");
+        var exHead = document.getElementById("exHead");
+        var exSub = document.getElementById("exSub");
+
+        if (value == "SDG1") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud1.png";
+          saveHead = '지구 상 모든 형태의 빈곤 종식';
+          saveSub = '1990년 이래 절대 빈곤 비율은 절반 이하로 낮아졌습니다. 이는 괄목할만한 성과이긴 하지만, 아직 개발 도상국 국민 5명 중 1명은 하루 1.9달러 미만의 생활비로 살고 있고, 그보다 아주 조금 나은 생활을 영위하는 수백만의 사람들이 존재하며 그들은 더 깊은 가난의 수렁으로 빠져들고 있습니다. 빈곤은 단순히 생계 유지를 위한 소득과 재원의 부족 만을 뜻하지 않습니다. 빈곤의 개념은 기아와 영양실조, 교육과 사회 기본 서비스에 대한 접근성 제한, 사회적 불평등 및 의사 결정 참여 제한과 소외 등을 포함합니다. 지속 가능한 일자리 제공과 평등한 사회 구축을 위해 경제 성장은 반드시 포용적인 개념이어야 합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG2") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud2.png";
+          saveHead = '기아의 종식, 식량 안보 확보, 영양상태 개선 및 지속가능농업 촉진';
+          saveSub = '인류의 식량 생산, 분배, 소비 방식에 대해 다시 한 번 생각해 볼 때입니다. 위 과정이 제대로 이루어질 때 농림수산업계는 양질의 식품 공급과 함께 적절한 소득 창출을 이뤄낼 수 있고, 아울러 사람 중심의 농어촌 개발과 환경 보호에도 이바지할 수 있습니다. 그러나 현재 토양, 식수, 해양, 삼림 및 생물다양성이 급격히 훼손되고 있습니다. 기후 변화는 인류가 의존하는 자연 자원에 악영향을 미치고 있으며, 가뭄이나 홍수와 같은 자연 재해로 인한 위험을 가중시키고 있습니다. 많은 농어민들이 더 이상 자신의 땅에서 생계를 이어나갈 수 없어 기회를 찾아 어쩔 수 없이 도시로 몰려들고 있습니다. 현재 전세계 8억 명, 2050년에는 20억 명으로 예상되는 기아 해결을 위해 전세계 식량 및 농업 시스템의 근본적인 변혁이 필요합니다. 식량과 농업 부문은 경제 개발을 위한 핵심 해법이며 빈곤과 기아 해결의 근간입니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG3") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud3.png";
+          saveHead = '건강한 삶의 보장과 전 세대를 위한 복리(well-being) 증진';
+          saveSub = '건강한 삶의 보장과 전 세대를 위한 복리(well-being)증진은 지속가능개발의 핵심입니다. 그동안 인류의 기대 수명은 크게 증가했고 영아 및 산모의 사망 원인이 되는 질병 발병률은 획기적으로 감소했습니다. 깨끗한 물 및 위생 시설에 대한 접근성 증대와 말라리아, 결핵, 소아마비 및 HIV 에이즈 억제에도 역시 많은 진전이 있었습니다. 그러나 다양한 질병의 완전한 근절과 현존하는 각종 보건 관련 문제를 해결하려면 더 많은 노력이 필요합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG4") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud4.png";
+          saveHead = '모두를 위한 폭 넓고 수준 있는 교육 보장과 평생 학습 기회 제공';
+          saveSub = '양질의 교육 수혜는 인류의 삶 개선과 지속가능개발의 근간이 됩니다. 그동안 각 수준별 교육으로의 접근성이 크게 증가하였고, 특히 여성의 진학률이 현저히 증가하였습니다. 기초 문해력은 크게 향상했지만, 보편적 교육복지 실현이라는 큰 발걸음을 위해서는 더 적극적인 노력이 필요합니다. 일례로 전 세계적으로 초등교육 수준에서의 양성평등은 실현되었지만, 모든 교육 수준에서 이 목표를 달성한 국가는 소수에 불과합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG5") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud5.png";
+          saveHead = '양성평등과 여권 신장 실현';
+          saveSub = '유엔새천년개발목표 하에 전 세계적으로 양성평등과 여권 신장에 큰 진전이 있었지만(양성의 동등한 초등교육 진입 포함), 여성과 소녀는 세계 곳곳에서 여전히 차별과 폭력으로 고통받고 있습니다. 양성평등이란 단순한 기본 인권이 아니라, 평화와 번영이 있는 지속가능사회 실현을 위한 필수적인 바탕입니다. 여성과 소녀의 동등한 교육 수혜, 건강한 삶, 양질의 일자리, 동등한 정치경제적 의사결정 과정 참여 실현을 통해 지속가능한 경제 구축과 인류사회 복지 증진을 실현할 수 있습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        }
+        else if (value == "SDG6") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud6.png";
+          saveHead = '모두를 위한 깨끗한 물과 위생시설 접근성 보장';
+          saveSub = '누구나 이용 가능한 깨끗한 물은 우리 모두가 원하는 세상을 만들기 위한 필수 요소 입니다. 그리고 지구상에는 이런 세상을 만들 수 있는 깨끗한 물이 충분히 존재합니다. 그러나 열악한 경제 환경과 시설로 인해, 매년 수백만의 사람들이(그 중 대부분은 어린이) 물 부족과 위생시설 결여로 인한 질병으로 사망하고 있습니다. 물 부족, 나쁜 수질과 열악한 위생시설은 전세계 빈곤 가구의 식량 안보, 생계 유지, 그리고 교육 기회에 부정적인 영향을 미칩니다. 가뭄의 경우 세계에서 가장 빈곤한 국가에 발생하여 기아와 영양결핍을 악화시킵니다. 2050년까지 세계인구의 4분의 1은 만성적 혹은 빈번한 담수 부족에 시달릴 가능성이 높습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG7") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud7.png";
+          saveHead = '모두를 위한 적정 가격의 신뢰할 수 있고 지속 가능하며 현대적인 에너지에의 접근 보장';
+          saveSub = '오늘날 세계가 맞닥뜨리고 있는 거의 모든 난제와 기회의 중심에는 에너지라는 문제가 있습니다. 일자리, 안보, 기후 변화, 식량 생산 혹은 소득 상승 등 어느 문제든 에너지 접근 용이성은 필수적입니다. 지속가능에너지는 인류의 삶과 경제, 지구 상의 모든 것을 근본적으로 변혁시킬 수 있는 기회입니다. 반기문 전 유엔 사무총장의 모두를 위한 지속가능 에너지 구상은 현대적 에너지 서비스로의 보편적 접근 보장, 에너지 효율 개선, 재생가능자원의 사용 증대를 선도한 바 있습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG8") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud8.png";
+          saveHead = '모두를 위한 포용적이고 지속가능한 성장과 고용 및 양질의 일자리 제공';
+          saveSub = '아직도 세계인구의 절반 가량이 약 2달러의 금액으로 하루를 살아가고 있습니다. 그리고 너무나 많은 곳에서 근로활동이 가난극복을 보장하지 못하고 있습니다. 이러한 느리고 불균등한 진행상황을 극복하기 위해 우리는 빈곤퇴치를 위한 경제사회 정책을 다시 검토하고 개편하는 것이 필요합니다. 민주주의 사회에는 모두가 성장의 성과를 공유해야한다는 사회계약이 바탕에 깔려 있습니다. 그러나 지속적인 취업기회의 결핍, 부족한 투자 및 소비 부족은 이러한 사회계약을 침해합니다. 양질의 일자리 창출은 2015년 이후로도 거의 모든 국가에 있어 가장 어려운 문제가 될 것입니다. 지속적인 경제성장은 사회로 하여금 환경을 파괴하지 않으면서 동시에 경제성장을 촉진할 수 있는 양질의 일자리를 제공하는 것을 필요로 합니다. 취업기회와 양질의 근로조건은 모든 생산연령의 인구에게 필요합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG9") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud9.png";
+          saveHead = '복원력이 높은 사회기반시설 구축과 포용적이고 지속가능한 산업화 증진 및 혁신 장려';
+          saveSub = '교통, 관개시설, 에너지, 정보통신기술시설과 같은 사회기반시설에 투자하는 것은 지속가능한 발전 달성 및 많은 국가의 연대 강화에 필수적입니다. 생산성 및 소득 증가, 건강 및 교육 성과의 향상을 위해 사회기반시설에 투자해야 한다는 것은 오래전부터 알려진 사실입니다. 포용적이고 지속가능한 산업발전은 소득 창출의 주요 원천으로, 모든 사람의 생활 수준이 빠르고 지속적으로 증가하도록 하고, 친환경적인 산업화에 필요한 기술 해법을 제공합니다. 기술의 진보는 자원 및 에너지 효율성 증가와 같은, 친환경 목표달성을 위한 노력의 기반이 됩니다. 기술과 혁신이 없다면 산업화 또한 일어날 수 없으며, 산업화 없이는 발전도 일어나지 않습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        }
+        else if (value == "SDG10") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud10.png";
+          saveHead = '국가 내∙국가 간 불평등 해소';
+          saveSub = '국제 사회는 그동안 빈곤 감축에 있어 큰 진전을 이루었습니다. 최빈국, 내륙개발도상국, 소도(小島)개발도상국과 같은 취약국가들은 빈곤 감소를 위한 노력을 아끼지 않고 있습니다. 그러나 불평등은 여전히 존재하며 보건과 교육서비스 등의 접근성 면에서 아직 큰 격차가 남아있습니다. 또한 국가 간의 소득 불균형 문제는 감소하였지만, 국가 내의 불균형 문제는 증가하였습니다. 경제, 사회, 환경을 세 축으로 하는 지속가능발전을 배제한 포용성 없는 경제 성장은 빈곤을 감축하기에 부족하다는 공감대가 커지고 있습니다. 불평등을 줄이기 위해서는 불우하고 소외된 사람들에게 먼저 주의를 기울이는 보편적 정책이 우선되어야 합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG11") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud11.png";
+          saveHead = '포용적이고 안전하며 회복력 있는 지속가능 도시 조성';
+          saveSub = '도시는 아이디어, 상업, 문화, 과학, 생산성, 사회 개발 등의 중심입니다. 도시가 제 기능을 다할 때 사람들은 사회경제적 진보를 이룰 수 있습니다. 하지만, 도시가 토지와 자원에 부담을 주지 않으면서 지속적인 일자리와 부를 창출하는 일은 매우 어려운 일입니다. 흔한 도시화와 관련된 문제로는 교통 혼잡, 기본 서비스 제공을 위한 재원 부족, 주거난 및 사회기반시설의 감소 등이 있습니다. 자원 사용 효율화, 오염과 빈곤 저감 노력을 동반한 성장과 번영이 지속될 때 도시가 직면한 문제점을 극복할 수 있습니다. 모두에게 기회가 돌아가며 누구나 사회 기본 서비스, 에너지, 주거, 교통 등을 이용할 수 있는 곳이 바로 우리 모두가 꿈꾸는 미래 도시입니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG12") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud12.png";
+          saveHead = '지속가능한 소비와 생산';
+          saveSub = '지속가능한 소비와 생산이란 자원과 에너지의 효율성 제고, 지속 가능한 기반시설 확충, 사회 기본서비스와 친환경적 양질의 일자리 제공으로 모두가 더 나은 삶을 누릴 수 있게 하는 것을 말합니다. 이 목표의 이행은 전반적 개발 계획 달성에 일조하며, 향후 경제, 환경, 사회적 비용을 줄이는 동시에 경제 경쟁력을 높이며 빈곤을 줄일 것입니다. 지속가능 소비와 생산은 "더 적은 것으로 더 많은, 더 나은 일을" 해내는 것을 목표로 합니다. 즉 소비와 생산 주기에서 자원의 소모와 고갈, 오염을 줄이는 등의 경제 행위로 인한 순복지 증대와 인류의 삶의 질 개선을 지향합니다. 이 과정은 기업, 소비자, 정책결정자, 연구자, 과학자, 소매업자, 언론, 개발협력기구 등의 이해관계자를 포함합니다. 이 과정에는 체계적인 접근이 필요하며, 생산자부터 최종 소비자까지 공급 과정을 이루는 모든 행위 주체의 협력이 필요합니다. 이 과정은 지속가능한 소비와 생활 양식에 대한 소비자의 인식 제고와 교육, 제품 기준과 상품 라벨 등으로 소비자에게 적절한 정보 제공, 소비자의 지속가능 공공조달 참여 등을 포함합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG13") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud13.png";
+          saveHead = '기후 변화 대응';
+          saveSub = '기후 변화는 현재 모든 대륙의 모든 나라에 영향을 미치고 있습니다. 오늘날 기후 변화는 국가 경제를 위협하고 인간의 삶에 영향을 미치며, 인류, 공동체, 나아가 국가에 이르기까지 막대한 비용을 초래하여 미래에는 더욱 심각해질 것으로 예상됩니다. 인류는 달라진 기후 패턴, 해수면 상승, 빈번한 이상 기후 현상 등을 통해 기후 변화의 심각성을 깨닫고 있습니다. 인류의 활동으로 인해 발생한 온실 가스가 기후 변화를 추동하고 있으며 이는 지속적으로 증가하는 추세입니다. 현재 온실 가스는 사상 최고치를 기록하고 있습니다. 어떠한 조치를 취하지 않는다면 지구의 평균 표면 온도는 계속 올라가 21세기 안에 3도 이상 상승할 것으로 예상되며 몇몇 국가는 더 극심한 영향을 받을 것입니다. 가장 가난하고 취약한 사람들이 가장 많은 영향을 받게 될 것입니다. 오늘날 국가들이 보다 친환경적이며 회복력있는 경제 체제로 도약할 수 있는 안정적인 해법이 있습니다. 보다 많은 사람들이 재생 가능 에너지를 이용하고, 탄소 배출을 줄이며 기후 변화 적응력을 높여줄 다른 방법들을 강구함으로서 변화의 속도는 점점 빨라지고 있습니다. 하지만 기후 변화는 전 지구적 문제이며 범 국가적인 현상입니다. 즉 한 곳의 오염이 다른 곳의 사람들에게 영향을 미치게 됩니다. 기후 변화는 국제적으로 조율된 해법을 요하며, 개발도상국들이 저탄소 국가로 거듭날 수 있도록 국가 간 협력이 필요한 사안입니다. 기후변화 문제를 다루기 위하여, 여러 국가들은 2015년 12월 12일 제21차 유엔기후변화협약당사국총회에서 파리 협약을 채택하였으며, 이 협약은 그 후 2016년 11월 4일 효력을 발생하게 됩니다. 이 협약에서 모는 국가는 지구 온도 상승을 섭씨 2도 이하로, 중대한 위험 발생시 섭씨 1.5도 이하로 낮추기 위해 노력하기로 합의하였습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        }
+        else if (value == "SDG14") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud14.png";
+          saveHead = '대양, 바다, 해양자원의 보호와 지속가능한 이용';
+          saveSub = '전세계 해양의 온도, 화학적 성분, 해류와 생명체 등은 인류가 살 수 있는 전지구적 시스템을 만들고 있습니다. 빗물, 식수, 날씨, 기후, 해안선, 우리 식량의 많은 부분, 그리고 우리가 숨쉬는 산소조차 궁극적으로는 바다가 제어 및 제공하는 것들입니다. 역사적으로, 해양과 바다는 무역과 운송의 필수불가결한 통로가 되어 왔습니다. 이 필수적인 범지구적 자원의 주의 깊은 관리는 지속가능한 미래의 핵심입니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG15") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud15.png";
+          saveHead = '지속가능한 삼림 관리, 사막화와 토지 파괴 방지 및 복원, 생물다양성 감소 방지';
+          saveSub = '삼림은 지구 표면의 30%를 차지합니다. 삼림은 인간에게 안정적인 식량과 쉼터를 제공할 뿐만 아니라 기후변화 대응, 생물다양성 보호, 토착민 삶의 터전 제공 등의 핵심 역할을 합니다. 매년 1천3백만 헥타르의 삼림이 감소하고 있으며, 토지의 계속되는 황폐화로 36억 헥타르가 사막화되고 있습니다. 인간의 활동과 기후 변화로 인한 삼림 황폐화와 사막화는 지속가능한 발전을 가로막는 가장 큰 문제 중 하나이며 빈곤 퇴치를 위해 싸우는 수백만 명의 삶과 생계에 영향을 미치고 있습니다. 삼림을 관리하고 사막화를 막기 위한 범지구적인 노력은 계속되고 있습니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG16") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud16.png";
+          saveHead = '정의롭고, 평화로우며 포용적인 사회 조성';
+          saveSub = '지속가능발전의 16번째 목표는 평화롭고 포용력있는 사회를 조성하고, 누구나 법에 쉽게 다가갈 수 있는 환경을 만들며, 모든 면에서 효율적이고 책임을 다하는 사회 제도 구축에 기여하는 것입니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        } 
+        else if (value == "SDG17") {
+          document.getElementById("exImg").src = "Images/Wordcloud/cloud17.png";
+          saveHead = '지속가능발전을 위한 이행수단과 글로벌파트너십 강화';
+          saveSub = '지속가능발전 의제의 성공적인 이행을 위해서는 정부, 민간 부문, 시민사회 간의 파트너십이 필요합니다. 원칙과 가치, 그리고 인간과 지구를 중심으로 하는 공유된 비전과 목표에 기반한 이러한 포용적인 파트너십은 전지구적, 지역적, 국가적, 지방적 차원에서 모두 이루어져야 합니다. 지속가능발전목표 이행을 위해 수 조 달러에 이르는 막강한 민간 재원을 동원하고 재편성하여 활용하려면 신속한 행동이 필요합니다. 해외직접투자(FDI)를 포함한 장기적인 투자가 특히 개도국의 주요 부문에서 이루어져야 합니다. 이는 지속가능한 에너지, 인프라, 운송 및 정보통신기술을 포함합니다. 공공 부문 또한 분명한 방향을 설정해야 합니다. 이러한 투자를 가능케하는 검토 및 감시 체계, 규제책 및 인센티브 구조는 반드시 재정비되어야 하며, 이는 투자를 유치하고 지속가능발전을 촉진할 것입니다. 최고감사기구와 입법부의 감시 기능과 같은 국가 감시 메커니즘도 강화되어야 합니다.';
+          exHead.innerHTML = saveHead;
+          exSub.innerHTML = saveSub;
+        }
+      });
+    </script>
+    
+  </body>
+</html>

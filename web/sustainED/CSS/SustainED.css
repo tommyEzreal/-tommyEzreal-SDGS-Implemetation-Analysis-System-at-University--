@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Do Hyeon", sans-serif;
+}
+a {
+    color: #2238b4;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: "Oswald", sans-serif;
+  }
+a:hover {
+    color: black;
+}
+h1 {
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500px;
+    line-height: 1.2;
+}
+h6 {
+    font-family: "Oswald", sans-serif;
+    margin-left: 62px;
+}
+body {
+    font-family: "Oswald", sans-serif;
+    background: #fff;
+}
+header {
+    width: 1920px;
+    display: block;
+    background-color: #71adf0;
+    margin: auto;
+}
+hr {
+    border: 2px solid #4a94e9;
+  }
+nav {
+    display: block;
+}
+
+
+.menu-wrap {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+}
+.menu {
+    margin-right: 80px;
+    text-align: center;
+    flex-grow: 1;
+    font-family: "Rubik", sans-serif;
+}
+.menu:hover {
+    color: #ca8000;
+}
+.container-main {
+    width: 1920px;
+    height: 800px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+.main-position {
+    padding-top: 3rem;
+    margin-bottom: 120px;
+}
+.bg-basis {
+    background-color: #65B9F1;
+
+}
+.content-position {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    align-items: center;
+}
+.main-left {
+    position: relative;
+    width: 800px;
+    margin-right: 80px;
+    padding-left: 80px;
+    text-align: left;
+}
+#intro {
+    font-size: 80px;
+    font-weight: 280px;
+    line-height: 1.2;  
+    text-transform: uppercase;
+    margin-top: 200px;
+    margin-left: 200px;
+}
+#intro-sub {
+    margin-left: 204px;
+    margin-bottom: 60px;
+    font-size: 20px;
+}
+/* 학교 선택 */
+.Uni_selector{
+    margin-left: 240px;
+    width: 400px;
+    font-size: 20px;
+
+    /* position: relative;
+    left: 520px;
+    top: 26px; */
+}
+#selectField{
+    background-color: white;
+    width: 400px;
+    padding: 15px 20px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#selectField img{
+    width: 12px;
+    transition: transform 0.5s;
+}
+
+#list{
+    background-color: white;
+    width: 398px;
+    display: inline-block;
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+    
+}
+#list::-webkit-scrollbar {
+    width: 8px;
+    background: lightgray;
+}
+#list::-webkit-scrollbar-thumb{
+    background: rgb(149, 149, 149);
+
+}
+
+.options{
+    width: 100%;
+    padding: 15px 0 15px 70px;
+    list-style: none;
+    cursor: pointer;
+    border-bottom: 0.5px solid black;
+    box-sizing: border-box;
+    position: relative;
+}
+.options img{
+    width: 25px;
+    position: absolute;
+    top: 12px;
+    left: 25px;
+}
+.options:hover{
+    background-color: #e2e2e2;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.des {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: white;
+}
+.name {
+    font-size: 40px;
+    font-weight: 300px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-top: 28px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: inherit;
+    color: black;
+}
+.name:hover {
+    color: black;
+}
+
+.main-img {
+    width: 600px;
+    height: 600px;
+    margin-top: 100px;
+}
+.university {
+    width: 1110px;
+    height: 100px;
+    padding-left: 800px;
+    padding-top: 40px;
+    margin: auto;
+    margin-bottom: 25px;
+    font-size: 55px;
+    font-weight: 300px;
+    background-color: #65B9F1;
+    white-space: nowrap;
+}
+
+/* about.html */
+.about-wrap {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+}
+.about {
+    margin-left: 100px;
+    flex-wrap: wrap;
+}
+.about-img {
+    margin-left: 140px;
+    margin-top: 10px;
+    width: 600px;
+    height: 600px;
+}
+.headline {
+    margin-top: 100px;
+    font-size: 40px;
+}
+.text-orange {
+    width: 700px;
+    margin-top: 40px;
+    color:#FFAA17;
+    font-size: 28px;
+}
+.text-black {
+    width: 700px;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+/* 17goals.html */
+.seventeenImg {
+    width: 1920px;
+    margin: auto;
+}
+  .seventeenImg img {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+  .seventeenImg img:hover {
+    opacity: 0.4;
+  }
+  .btnImg {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
+
+#exWrap {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+}
+#exImg {
+    padding-left: 200px;
+    padding-right: 100px;
+    padding-top: 70px;
+    width: 680px;
+    height: 500px;
+}
+#goalText {
+    padding-top: 80px;
+    width: 700px;
+}
+#exHead {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+#exSub {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+/* 5p.html */
+#pWrap {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+}
+#p1 {
+    margin-top: 80px;
+    margin-left: 160px;
+  }
+#p2 {
+    width: 1000px;
+    margin-left: 100px;
+    margin-top: 118px;
+    height: 450px;
+}
+
+/* logo */
+#logo1 {
+    padding-left: 1050px;
+    padding-top: 110px;
+    width: 400px;
+    height: 80px;
+}
+#logo2 {
+    padding-left: 20px;
+    width: 360px;
+    height: 80px;
+}

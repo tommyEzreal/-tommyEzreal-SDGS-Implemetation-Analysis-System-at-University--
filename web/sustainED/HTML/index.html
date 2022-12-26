@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainED</title>
+    <link rel="stylesheet" href="CSS/SustainED.css">
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+        <nav class="des">
+          <a href="SustainED.html"><h1 class="name">SUSTAINED</h1></a>
+          <div class="menu-wrap">
+            <p class="menu"><a href="about.html">ABOUT SDGS</a></p>
+            <p class="menu"><a href="goals.html">OUR 17 GOALS</a></p>
+            <p class="menu"><a href="fivep.html">WHAT IS 5P</a></p>
+          </div>
+        </nav>
+    </header>
+
+
+    <main class="container-main bg-basis">
+      <div class="content-position">
+        <div class="main-left">
+          <h1 id="intro">SDGS ANALYSIS</h1>
+          <p id="intro-sub">각 학교에 대한 SDGs 이행 현황 분석을 제공합니다.</p>
+          <div class="Uni_selector">
+            <div id="selectField">
+              <p id="selectText">Select University</p>
+              <img src="Images/arrow.png" id="arrowIcon">
+            </div>
+          
+            <ul id="list" class="hide">
+            <li class="options">
+              <img src="Images/uni_logo/KNU.png">
+              <p>강원대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/KU.png">
+              <p>건국대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/KPNU.png">
+              <p>경북대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/KHU.png">
+              <p>경희대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/PNU.png">
+              <p>부산대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/SU.png">
+              <p>세종대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/AJOU.png">
+              <p>아주대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/YONSEI.png">
+              <p>연세대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/EWHA.png">
+              <p>이화여자대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/JNNU.png">
+              <p>전남대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/JBNU.png">
+              <p>전북대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/JEJU.png">
+              <p>제주대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/CNNU.png">
+              <p>충남대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/CBNU.png">
+              <p>충북대학교</p>
+            </li>
+            <li class="options">
+              <img src="Images/uni_logo/HYU.png">
+              <p>한양대학교</p>
+            </li>
+            </ul>
+          </div>
+        </div>
+        <img class="main-img" src="Images/SDGs_img/SDG-logo.png">
+      </div>
+      <img id="logo1" src="Images/Kdata_logo.png">
+      <img id="logo2" src="Images/HUFS_logo.png">
+    </main>
+      
+    <script>
+      var selectField = document.getElementById("selectField");
+      var selectText = document.getElementById("selectText");
+      var options = document.getElementsByClassName("options");
+      var list = document.getElementById("list");
+      var arrowIcon = document.getElementById("arrowIcon");
+
+
+      selectField.onclick = function(){
+
+        list.classList.toggle("hide");
+        arrowIcon.classList.toggle("rotate");
+      }
+
+      for(option of options){
+        option.onclick = function(){
+          selectText.innerHTML = this.textContent;
+          list.classList.toggle("hide");
+          arrowIcon.classList.toggle("rotate");
+
+          var select_uni = document.getElementById('selectText').innerText
+          if(select_uni == '강원대학교')
+            location.href = 'KNU SDGs.html'
+          else if(select_uni == '건국대학교')
+            location.href = 'KU SDGs.html'
+          else if(select_uni == '경북대학교')
+            location.href = 'KPNU SDGs.html' 
+          else if(select_uni == '경희대학교')
+            location.href = 'KHU SDGs.html'
+          else if(select_uni == '부산대학교')
+            location.href = 'PNU SDGs.html'
+          else if(select_uni == '세종대학교')
+            location.href = 'SU SDGs.html' 
+          else if(select_uni == '아주대학교')
+            location.href = 'AJOU SDGs.html'
+          else if(select_uni == '연세대학교')
+            location.href = 'YONSEI SDGs.html' 
+          else if(select_uni == '이화여자대학교')
+            location.href = 'EWHA SDGs.html'
+          else if(select_uni == '전남대학교')
+            location.href = 'JNNU SDGs.html'
+          else if(select_uni == '전북대학교')
+            location.href = 'JBNU SDGs.html' 
+          else if(select_uni == '제주대학교')
+            location.href = 'JEJU SDGs.html'
+          else if(select_uni == '충남대학교')
+            location.href = 'CNNU SDGs.html'
+          else if(select_uni == '충북대학교')
+            location.href = 'CBNU SDGs.html' 
+          else if(select_uni == '한국외국어대학교')
+            location.href = 'HUFS SDGs.html'
+          else if(select_uni == '한양대학교')
+            location.href = 'HYU SDGs.html'
+          }
+        }
+    </script>
+  </body>
+</html>

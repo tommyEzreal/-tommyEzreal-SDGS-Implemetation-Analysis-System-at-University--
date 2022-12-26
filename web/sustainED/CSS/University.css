@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Gowun+Dodum&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Gowun Dodum", sans-serif;
+  }
+  a {
+    color: #2238b4;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: "Oswald", sans-serif;
+  }
+  a:hover {
+    color: black;
+  }
+  h1{
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500px;
+    line-height: 1.2;
+  }
+  h6 {
+    font-family: "Oswald", sans-serif;
+    margin-left: 62px;
+  }
+  body {
+    font-family: "Oswald", sans-serif;
+    background: #fff;
+  }
+  header {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+  }
+  hr {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+    border: 2px solid #4a94e9;
+  }
+  nav {
+    display: block;
+  }
+
+  /* header */
+  .des {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
+  .name {
+    font-size: 40px;
+    font-weight: 300px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 28px;
+    margin-right: 20px;
+    line-height: inherit;
+    color: black;
+  }
+  .name:hover {
+    color: black;
+  }
+  .menu-wrap {
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-left: 1100px;
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+  }
+  .menu {
+    margin-right: 80px;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  /* 학교 */
+  .uniWrap {
+    margin: auto;
+    width: 1920px;
+  }
+  .university {
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 40px;
+    font-weight: 350px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    color: black;
+    background-color: white;
+  }
+  .mainWrap {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+  }
+  /* The Imapct Ranking */
+  #ranking {
+    background-color: #d9e5f3;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 360px;
+    width: 680px;
+    margin-top: 100px;
+    margin-left: 150px;
+  }
+  #content {
+    display: flex;
+  }
+  #impact {
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 38px;
+    padding: 75px 30px;
+    height: 10px;
+  }
+  #score {
+    font-family: 'Do Hyeon', sans-serif;
+    border: 6px solid black;
+    border-radius: 10px;
+    padding: 14px;
+    width: 136px;
+    height: 60px;
+    margin: 0 68px;
+    font-size: 45px;
+  }
+  #myGraph {
+    width: 300px;
+    height: 310px;
+    margin: -124px 30px;
+  }
+  #myGraph svg {
+    border: 1px solid;
+  }
+  #myGraph text {
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+  }
+  .bar {
+    fill: #4a94e9;
+  }
+  .bar:hover {
+    fill: #89a1bc;
+  }
+  .scoreText {
+    fill: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .impactExplain {
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 20px;
+    padding: 120px 22px;
+  }
+
+  /* 파이차트 */
+  .fivepExplain {
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 28px;
+    color: #2238b4;
+    margin-left: 200px;
+  }
+  #piechart {
+    text-align: center;
+    padding-left: 140px;
+  }
+  .pie-inside {
+    font-size: 20px;
+    font-weight: bold;
+    fill: black;
+  }
+  .pielabel {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2px;
+  }
+
+
+  /* 키워드 차트 */
+  .marginAuto {
+    width: 1920px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+  }
+  .keyExplain {
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2238b4;
+    padding: 40px 0 0 60px;
+
+  }
+  #key-legend {
+    width: 620px;
+    height: 80px;
+    padding-right: 60px;
+  }
+  #key-legend text {
+    font-size: 20px;
+    font-family: "Gowun Dodum", sans-serif;
+  }
+  #keyword-compare {
+    text-align: center;
+    flex-wrap: wrap;
+    width: 1920px;
+    height: 140px;
+    display: flex;
+    margin: auto;
+    padding-bottom: 100px;
+  }
+  .keyword {
+    color: black;
+    width: 180px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 20px;
+    margin: 0 0 28px 102px;
+  }
+  .keygraph {
+    margin-top: 40px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 384px;
+    height: 140px;
+    background-color: white;
+    border: none;
+  }
+  .keygraph:hover {
+    background-color: #d9e5f3;
+    color: black;
+  }
+  #svg1,#svg2, #svg3, #svg4, #svg5{
+    margin: -20px 60px;
+  }
+  .blue {
+    fill: blue;
+  }
+  .red {
+    fill: red;
+  }
+
+  /* 키워드 그래프 */
+  #keyText {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 28px;
+    width: 1920px;
+    display: none;
+    margin: auto;
+  }  
+  .keyGraphName {
+    background-color: #d9e5f3;
+    border-radius: 8px;
+    margin: 0 20px 20px 0;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    font-family: "Gowun Dodum", sans-serif;
+  }
+  .threeGraph {
+    display: flex;
+    margin: auto;
+    padding-left: 30px;
+  }
+  #keyword1 {
+    margin: auto;
+    color: #2238b4;
+    padding-left: 60px;
+  }
+  #keyword2 {
+    margin: auto;
+    color: #2238b4;
+    padding-left: 60px;
+  }
+  #reload {
+  }
+  #last1, #last2, #last3, #last4, #last5, #last6{
+    margin: 40px 0 20px 20px;
+  }
+  .exampleExplain1 {
+    font-family: "Gowun Dodum", sans-serif;
+    color: #2238b4;
+    width: 500px;
+    height: 40px;
+    padding: 0 0 0 230px;
+  }
+  .exampleExplain2 {
+    font-family: "Gowun Dodum", sans-serif;
+    color: #2238b4;
+    width: 500px;
+    height: 40px;
+    padding: 40px 0 0 230px;
+  }
+  #last7 {
+    width: 700px;
+    border: 2px solid black;
+    flex-wrap: wrap;
+    font-size: 20px;
+    margin: 40px 0 0 20px;
+    padding: 20px 20px 20px 20px;
+  }
+  #last8 {
+    width: 700px;
+    margin: auto;
+    border: 2px solid black;
+    flex-wrap: wrap;
+    font-size: 20px;
+    margin: 40px 0 0 20px;
+    padding: 20px 20px 20px 20px;
+  }
+  #last7 li, #last8 li {
+    list-style: none;
+  }
+  #last1 svg, #last2 svg, #last3 svg, #last4 svg, #last5 svg, #last6 svg {
+    width: 300px;
+    height: 260px;
+  }
+  #myGraph1, #myGraph2, #myGraph3, #myGraph4, #myGraph5, #myGraph6 {
+    margin-left: 10px;
+    margin-right: 20px;
+    padding-top: 20px;
+  }
+  #myGraph1 text, #myGraph2 text, #myGraph3 text, #myGraph4 text, #myGraph5 text, #myGraph6 text{
+    font-family: "Sunflower", sans-serif;
+    font-size: 14px;
+  }
+  .barNum {
+    font-size: 9pt;
+    text-anchor: middle;
+  }
+  .axis text {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 11px;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: black;
+  }
+  .axis_x line {
+    fill: none;
+    stroke: black;
+  }
+  .barName {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 9pt;
+    text-anchor: left;
+  }

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ESG</title>
+    <script src="JS/jquery.js"></script>
+    <link rel="stylesheet" href="CSS/University.css"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sunflower&display=swap" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@1&family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="des">
+        <a href="index.html"><h1 class="name">SUSTAINED</h1></a>
+        <div class="menu-wrap">
+          <p class="menu"><a href="about.html">ABOUT SDGS</a></p>
+          <p class="menu"><a href="goals.html">OUR 17 GOALS</a></p>
+          <p class="menu"><a href="fivep.html">WHAT IS 5P</a></p>
+        </div>
+      </nav>
+    </header>
+    <hr>
+
+    <div class="uniWrap">
+      <p class="university">강원대학교 SDGs 분석 결과</p>
+    </div>
+    <main class="mainWrap">
+      <section id="ranking">
+        <p id="impact">Impact ranking score</p>
+        <div id="content">
+          <div>
+            <p id="score">88.5점</p>
+          </div>
+          <div>
+            <svg id="myGraph"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              var dataset = [
+                { x: "2020", y: 75.3 },
+                { x: "2021", y: 77.4 },
+                { x: "2022", y: 88.5 },
+              ];
+              var svg = d3.select("#myGraph");
+              var width = parseInt(svg.style("width"), 10) - 30;
+              var height = parseInt(svg.style("height"), 10) - 30;
+              var svgG = svg.append("g").attr("transform", "translate(30, 0)");
+
+              var xScale = d3
+                .scaleBand()
+                .domain(
+                  dataset.map(function (d) {
+                    return d.x;
+                  })
+                )
+                .range([0, width])
+                .padding(0.4);
+              var yScale = d3
+                .scaleLinear()
+                .domain([60, 100])
+                .range([height, 10]);
+
+              var scale = d3.scaleOrdinal().range(["#FFAA17"]);
+
+              svgG
+                .append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(xScale));
+              /* y축 표시 */
+              svgG
+                .append("g")
+                .attr("class", "grid")
+                .call(d3.axisLeft(yScale).ticks(10));
+
+              var barG = svgG.append("g");
+              /* 막대 표시 */
+              barG
+                .selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("class", "bar")
+                .attr("height", function (d, i) {
+                  return height - yScale(d.y);
+                })
+                .attr("width", xScale.bandwidth())
+                .attr("x", function (d, i) {
+                  return xScale(d.x);
+                })
+                .attr("y", function (d, i) {
+                  return yScale(d.y);
+                })
+                .attr("fill", function (d) {
+                  return scale(d.x);
+                });
+              /* score 표시 */
+              barG
+                .selectAll("text")
+                .data(dataset)
+                .enter()
+                .append("text")
+                .text(function (d) {
+                  return d.y;
+                })
+                .attr("class", "scoreText")
+                .attr("x", function (d, i) {
+                  return xScale(d.x) + xScale.bandwidth() / 2;
+                })
+                .style("text-anchor", "middle")
+                .attr("y", function (d, i) {
+                  return yScale(d.y) + 28;
+                });
+            </script>
+          </div>
+        </div>
+        <p class="impactExplain">* Impact Ranking Score : 대학 평가기관인 타임스 고등교육에서 측정한 점수</p>
+      </section>
+
+      <div id="piechart">
+        <p class="fivepExplain">5Ps 라벨 분포</p>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script>
+          var width = 750,
+            height = 500;
+          var colors = d3.scaleOrdinal(d3.schemeSet3);
+          /* var colors = d3.scaleOrdinal(d3.schemeCategory20,Dark2,Set2,Pastel1,Paired); */
+          var svg = d3
+            .select("#piechart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+          /*                         .style("background", "pink"); */
+          var details = [
+            { keyword: "인간권리", number: "38" },
+            { keyword: "지구환경", number: "9" },
+            { keyword: "사회발전", number: "40" },
+            { keyword: "정의와평화", number: "5" },
+            { keyword: "파트너쉽", number: "9" },
+          ];
+          var data = d3
+            .pie()
+            .sort(null)
+            .value(function (d) {
+              return d.number;
+            })(details);
+          var segments = d3.arc().innerRadius(0).outerRadius(200);
+          /* .padAngle(0.05)
+                           .padRadius(50); */
+          var sections = svg
+            .append("g")
+            .attr("transform", "translate(300, 250)")
+            .selectAll("path")
+            .data(data);
+          sections
+            .enter()
+            .append("path")
+            .attr("d", segments)
+            .attr("fill", function (d) {
+              return colors(d.data.keyword);
+            })
+            .attr("stroke", "white")
+            .style("stroke-width", "2px");
+
+          var content = d3
+            .select("#piechart")
+            .select("g")
+            .selectAll("text")
+            .data(data);
+          content
+            .enter()
+            .append("text")
+            .classed("pie-inside", true)
+            .each(function (d) {
+              var center = segments.centroid(d);
+              d3.select(this)
+                .attr("x", center[0]-12)
+                .attr("y", center[1])
+                .text(d.data.number + "%");
+            });
+
+          var legends = svg
+            .append("g")
+            .attr("transform", "translate(580, 40)")
+            .selectAll(".legends")
+            .data(data);
+          var legend = legends
+            .enter()
+            .append("g")
+            .classed("legends", true)
+            .attr("transform", function (d, i) {
+              return "translate(0," + (i + 1) * 40 + ")";
+            });
+
+          legend
+            .append("rect")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", function (d) {
+              return colors(d.data.keyword);
+            });
+          legend
+            .append("text")
+            .classed("pielabel", true)
+            .text(function (d) {
+              return d.data.keyword;
+            })
+            .attr("x", 40)
+            .attr("y", 16);
+        </script>
+      </div>
+    </main>
+    <div class="marginAuto">
+      <p class="keyExplain">2021년 Impact Ranking Score 평가 결과</p>
+      <svg id="key-legend">
+        <g>
+          <rect x="20" y="65" width="48" height="8" fill="#9ACA7C"></rect>
+          <text x="80" y="76">현재 대학 점수</text>
+          <rect x="220" y="65" width="48" height="8" fill="red"></rect>
+          <text x="280" y="76">해외 TOP 50 평균</text>
+          <rect x="450" y="65" width="48" height="8" fill="blue"></rect>
+          <text x="510" y="76">국내 평균</text>
+        </g>
+      </svg>
+    </div>
+    <article id="keyword-compare">
+      <button class="keygraph" value="people">
+        <p class="keyword">인간권리</p>
+        <svg id="svg1"></svg>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script>
+          var data = [80.1, 64.2];
+          var color = ["red", "blue"];
+
+          d3.select("#svg1")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", 260)
+            .attr("y", 20)
+            .attr("fill", "#CCCCCC");
+
+          d3.select("#svg1")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", (44.64 * 260) / 100)
+            .attr("y", 20)
+            .attr("fill", "#9ACA7C");
+
+          d3.select("#svg1")
+            .append("g")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("height", 26)
+            .attr("x", (d) => (d * 260) / 100)
+            .attr("y", 20)
+            .attr("class", (d, i) => color[i])
+            .attr("width", 4);
+        </script>
+      </button>
+      <button class="keygraph" value="planet">
+        <p class="keyword">지구환경</p>
+        <svg id="svg2"></svg>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script>
+          var data = [83.9, 56.2];
+          var color = ["red", "blue"];
+
+          d3.select("#svg2")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", 260)
+            .attr("y", 20)
+            .attr("fill", "#CCCCCC");
+
+          d3.select("#svg2")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", (54.74 * 260) / 100)
+            .attr("y", 20)
+            .attr("fill", "#dcdc3c");
+
+          d3.select("#svg2")
+            .append("g")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("height", 26)
+            .attr("x", (d) => (d * 260) / 100)
+            .attr("y", 20)
+            .attr("class", (d, i) => color[i])
+            .attr("width", 4);
+        </script>
+      </button>
+      <button class="keygraph" value="prosperity">
+        <p class="keyword">사회발전</p>
+        <svg id="svg3"></svg>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script>
+          var data = [83.8, 56.2];
+          var color = ["red", "blue"];
+
+          d3.select("#svg3")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", 260)
+            .attr("y", 20)
+            .attr("fill", "#CCCCCC");
+
+          d3.select("#svg3")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", (67.02 * 260) / 100)
+            .attr("y", 20)
+            .attr("fill", "#BDBAD7");
+
+          d3.select("#svg3")
+            .append("g")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("height", 26)
+            .attr("x", (d) => (d * 260) / 100)
+            .attr("y", 20)
+            .attr("class", (d, i) => color[i])
+            .attr("width", 4);
+        </script>
+      </button>
+      <button class="keygraph" value="peace">
+        <p class="keyword">정의와평화</p>
+        <svg id="svg4"></svg>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script>
+          var data = [84.7, 65];
+          var color = ["red", "blue"];
+
+          d3.select("#svg4")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", 260)
+            .attr("y", 20)
+            .attr("fill", "#CCCCCC");
+
+          d3.select("#svg4")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", (44.9 * 260) / 100)
+            .attr("y", 20)
+            .attr("fill", "#EB8777");
+
+          d3.select("#svg4")
+            .append("g")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("height", 26)
+            .attr("x", (d) => (d * 260) / 100)
+            .attr("y", 20)
+            .attr("class", (d, i) => color[i])
+            .attr("width", 4);
+        </script>
+      </button>
+      <button class="keygraph" value="partnership">
+        <p class="keyword">파트너쉽</p>
+        <svg id="svg5"></svg>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script>
+          var data = [94.4, 73];
+          var color = ["red", "blue"];
+
+          d3.select("#svg5")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", 260)
+            .attr("y", 20)
+            .attr("fill", "#CCCCCC");
+
+          d3.select("#svg5")
+            .append("rect")
+            .attr("rx", 1)
+            .attr("height", 26)
+            .attr("width", (94.5 * 260) / 100)
+            .attr("y", 20)
+            .attr("fill", "#8AB0D0");
+
+          d3.select("#svg5")
+            .append("g")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("height", 26)
+            .attr("x", (d) => (d * 260) / 100)
+            .attr("y", 20)
+            .attr("class", (d, i) => color[i])
+            .attr("width", 4);
+        </script>
+      </button>
+    </article>
+
+    <footer id="keyText">
+      <div id="reload">
+        <p id="keyword1">*중요도 기반</p>
+        <div class="threeGraph">
+          <div id="last1">
+            <p class="keyGraphName">강원대 핵심 키워드</p>
+            <svg id="myGraph1"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                $("#reload").load(window.location.href + " #reload");
+
+                var value = $(this).attr("value");
+
+                if (value == "people") {
+                  uni = "KNU/k1a";
+                  req_data_o("text/KNU/KNU1.csv");
+                  req_data_k("text/KNU/KNU6.csv");
+                } else if (value == "planet") {
+                  uni = "KNU/k2a";
+                  req_data_o("text/KNU/KNU2.csv");
+                  req_data_k("text/KNU/KNU7.csv");
+                } else if (value == "prosperity") {
+                  uni = "KNU/k3a";
+                  req_data_o("text/KNU/KNU3.csv");
+                  req_data_k("text/KNU/KNU8.csv");
+                } else if (value == "peace") {
+                  uni = "KNU/k4a";
+                  req_data_o("text/KNU/KNU4.csv");
+                  req_data_k("text/KNU/KNU9.csv");
+                } else if (value == "partnership") {
+                  uni = "KNU/k5a";
+                  req_data_o("text/KNU/KNU5.csv");
+                  req_data_k("text/KNU/KNU10.csv");
+                }
+                createGraph(uni, "#myGraph1");
+              });
+            </script>
+          </div>
+          <div id="last2">
+            <p class="keyGraphName">국내 대학 핵심 키워드</p>
+            <svg id="myGraph2"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                var value = $(this).attr("value");
+                if (value == "people") {
+                  uni = "KOREA/k1a";
+                } else if (value == "planet") {
+                  uni = "KOREA/k2a";
+                } else if (value == "prosperity") {
+                  uni = "KOREA/k3a";
+                } else if (value == "peace") {
+                  uni = "KOREA/k4a";
+                } else if (value == "partnership") {
+                  uni = "KOREA/k5a";
+                }
+                createGraph(uni, "#myGraph2");
+              });
+            </script>
+          </div>
+          <div id="last3">
+            <p class="keyGraphName">해외 대학 핵심 키워드</p>
+            <svg id="myGraph3"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                var value = $(this).attr("value");
+                if (value == "people") {
+                  uni = "OVERSEA/k1a";
+                } else if (value == "planet") {
+                  uni = "OVERSEA/k2a";
+                } else if (value == "prosperity") {
+                  uni = "OVERSEA/k3a";
+                } else if (value == "peace") {
+                  uni = "OVERSEA/k4a";
+                } else if (value == "partnership") {
+                  uni = "OVERSEA/k5a";
+                }
+                createGraph(uni, "#myGraph3");
+              });
+            </script>
+          </div>
+        </div>
+        <p id="keyword2">*빈도수 기반</p>
+        <div class="threeGraph">
+          <div id="last4">
+            <p class="keyGraphName">강원대 핵심 키워드</p>
+            <svg id="myGraph4"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                var value = $(this).attr("value");
+                if (value == "people") {
+                  uni = "KNU/k1b";
+                } else if (value == "planet") {
+                  uni = "KNU/k2b";
+                } else if (value == "prosperity") {
+                  uni = "KNU/k3b";
+                } else if (value == "peace") {
+                  uni = "KNU/k4b";
+                } else if (value == "partnership") {
+                  uni = "KNU/k5b";
+                }
+                createGraph(uni, "#myGraph4");
+              });
+            </script>
+          </div>
+          <div id="last5">
+            <p class="keyGraphName">국내 대학 핵심 키워드</p>
+            <svg id="myGraph5"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                var value = $(this).attr("value");
+                if (value == "people") {
+                  uni = "KOREA/k1b";
+                } else if (value == "planet") {
+                  uni = "KOREA/k2b";
+                } else if (value == "prosperity") {
+                  uni = "KOREA/k3b";
+                } else if (value == "peace") {
+                  uni = "KOREA/k4b";
+                } else if (value == "partnership") {
+                  uni = "KOREA/k5b";
+                }
+                createGraph(uni, "#myGraph5");
+              });
+            </script>
+          </div>
+          <div id="last6">
+            <p class="keyGraphName">해외 대학 핵심 키워드</p>
+            <svg id="myGraph6"></svg>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script>
+              $(".keygraph").click(function () {
+                var value = $(this).attr("value");
+                if (value == "people") {
+                  uni = "OVERSEA/k1b";
+                } else if (value == "planet") {
+                  uni = "OVERSEA/k2b";
+                } else if (value == "prosperity") {
+                  uni = "OVERSEA/k3b";
+                } else if (value == "peace") {
+                  uni = "OVERSEA/k4b";
+                } else if (value == "partnership") {
+                  uni = "OVERSEA/k5b";
+                }
+                createGraph(uni, "#myGraph6");              
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="exampleExplain1">해외 대학 벤치마크 사례</p>
+        <div id="last7">
+          <script>
+            function req_data_o(para) {
+              fetch(para).then(function (response) {
+                response.text().then(function (text) {
+                  var list = text.split("/");
+                  var subject = "";
+                  for (var i = 0; i < 3; i++) {
+                    var target = list[i];
+                    subject += "<li>" + target + "</li>";
+                  }
+                  document.querySelector("#last7").innerHTML = subject;
+                });
+              });
+            }
+          </script>
+        </div>
+        <p class="exampleExplain2">국내 대학 벤치마크 사례</p>
+        <div id="last8">
+          <script>
+            function req_data_k(para) {
+              fetch(para).then(function (response) {
+                response.text().then(function (text) {
+                  var list = text.split("/");
+                  var subject = "";
+                  for (var i = 0; i < 3; i++) {
+                    var target = list[i];
+                    subject += "<li>" + target + "</li>";
+                  }
+                  document.querySelector("#last8").innerHTML = subject;
+                });
+              });
+            }
+          </script>
+      </div>
+        <script>
+          function createGraph(uni, para) {
+            d3.csv("CSV/" + uni + ".csv", function (error, data) {
+              var dataSet = []; //데이터를 저장
+              var labelName = []; //레이블 저장
+              for (var i in data[0]) {
+                dataSet.push(data[0][i]); //가로 줄 넣음
+                labelName.push(i); //레이블 넣음
+              }
+
+              //SVG요소의 넓이와 높이를 구함
+              var svgEle = document.getElementById(para.substr(1));
+              var svgWidth = 300;
+              var svgHeight = 260;
+
+              var xScale = d3.scaleLinear()
+                             .domain([2, 50])
+                             .range([0, 250]);
+
+              //그래프에 사용할 변수
+              var barElements; //막대그래프의 막대 요소를 저장할 변수
+              var dataMax = 80; //데이터의 최댓값
+              var barHeight = 20; //막대 넓이
+              var barMargin = 15; //막대 간격
+              var length = 10;
+              
+              //그래프 그리기(그래프 옵션)
+              barElements = d3
+                .select(para)
+                .selectAll("rect") //rect 요소를 지정
+                .data(dataSet); //데이터를 요소에 연결
+
+              //데이터가 추가될 때
+              barElements
+                .enter() //데이터 개수 만큼 반복
+                .append("rect") //데이터 개수만큼 rect 요소가 추가됨
+                .attr("class", "bar") //CSS 클래스를 지정
+                .attr("width", 0) //초깃값 0으로 설정
+                .attr("height", barHeight) //넓이 지정
+                .attr("x", 110)
+                .attr("y", function (d, i) {
+                  //Y좌표 지정
+                  return i * (barHeight + barMargin) + barMargin; //처음 Y축과 간격
+                })
+                .style("fill", function (d, i){
+                  if(i == 0) 
+                    return '#EE3A54';
+                })
+
+                //애니메이션
+                .transition()
+                .duration(800) //애니메이션 처리 시간
+                .delay(function (d, i) {
+                  return i * 200;
+                }) //0.4초 대기
+                .attr("x", function (d, i) {
+                  return 110;
+                }) //X 좌표를 지정
+                 .attr("width", function (d) {
+                  return xScale(d);
+                });
+                  //넓이설정.2번째의 파라미터에 함수지정
+/*                   length = length - 1;
+                  return 10 * length + (d * 1.2);; */
+
+              //막대의 레이블을 표시
+              barElements
+                .enter()
+                .append("text")
+                .attr("class", "barName")
+                .attr("y", function (d, i) {
+                  //Y좌표 지정
+                  return (
+                    i * (barHeight + barMargin) + (barHeight / 2 + barMargin) + 8
+                  );
+                }) //막대그래프의 표시 간격을 맞춤
+                .attr("x", 0)
+                .text(function (d, i) {
+                  return labelName[i];
+                }) //레이블 이름을 반환
+                .style("font-family", "Do Hyeon")
+                .style("font-size", 20);
+              //Y 방향의 선을 표시
+              d3.select(para)
+                .append("rect")
+                .attr("class", "axis_y")
+                .attr("height", function (d, i) {
+                  return (barHeight + barMargin) * dataSet.length + 30;
+                })
+                .attr("width", "1")
+                .attr("x", 110);
+            });
+          }
+        </script>
+      </div>
+    </footer>
+
+    <script>
+      $(".keygraph").click(function () {
+        document.getElementById("keyText").style.display = "flex";
+      });
+    </script>
+  </body>
+</html>
