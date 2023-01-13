@@ -6,14 +6,14 @@
 <img width="465" alt="image" src="https://user-images.githubusercontent.com/100064247/209541639-56c1fe43-4618-412e-ae6c-2d0fd372f591.png">
 
 ## Team 
--
--
--
--
--
--
--
--
+- SeoKwangWook
+- LeeJuYoung
+- YunHyeJu
+- JinHyunBin
+- YangByeongWook
+- KwonHaJin
+- OhSangHoon
+- LeeJiEun
 
 <br/>
 
