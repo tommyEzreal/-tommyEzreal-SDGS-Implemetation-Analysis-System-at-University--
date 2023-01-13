@@ -1,4 +1,4 @@
-# SDGS-Implemetation-Analysis-System-at-Universities
+# SDGS-Implementation-Analysis-System-at-Universities
 > A study on the Development of SDGs Implementation Analysis at Universities based on NLP
 > - 한국데이터산업진흥원 데이터청년캠퍼스 한국외국어대학교 자연어처리과정
 > - 2022 한국외대 AI교육원 인공지능 아이디어 공모전 우수상(AI교육원장상)
