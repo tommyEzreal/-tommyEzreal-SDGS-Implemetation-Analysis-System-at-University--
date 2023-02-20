@@ -1,6 +1,5 @@
 # SDGS-Implementation-Analysis-System-at-Universities
 > A study on the Development of SDGs Implementation Analysis at Universities based on NLP
-> - 한국데이터산업진흥원 데이터청년캠퍼스 한국외국어대학교 자연어처리과정
 > - 2022 한국외대 AI교육원 인공지능 아이디어 공모전 우수상(AI교육원장상)
 > - The 14th International Conference on Computer Science and its Applications(CSA 2022) 논문게재
 <p align="center"><img width="465" alt="image" src="https://user-images.githubusercontent.com/100064247/209541639-56c1fe43-4618-412e-ae6c-2d0fd372f591.png"></p>
